@@ -1,74 +1,150 @@
-# StarPets QA Test Assignment
+# 🚀 Тестовое задание на позицию QA Engineer (StarPets)
 
-Automated UI and API tests implemented with Playwright + TypeScript.
+Данный репозиторий содержит решение тестового задания для позиции **QA Engineer** в компании **StarPets**.
 
-## Stack
+---
 
-- Playwright
-- TypeScript
-- Page Object Model (POM)
+# 📋 Что реализовано
 
-## Project Structure
+## 🧠 Блок 1. Продуктовое мышление
 
+Проведен анализ процесса покупки и вывода внутриигрового предмета в Roblox.
+
+Рассмотрены:
+
+* несоответствия между требованиями и реальным User Journey;
+* вопросы к Product Manager;
+* риски асинхронной обработки заказов;
+* проблемы идемпотентности;
+* сценарии потери предметов или денежных средств;
+* подходы к пострелизному мониторингу.
+
+---
+
+## 🤖 Блок 2. Автоматизация
+
+Проект реализован на:
+
+* Playwright
+* TypeScript
+* Page Object Model (POM)
+
+---
+
+# 🔌 API-тестирование
+
+Для демонстрации подходов к API-тестированию использован публичный сервис:
+
+```text
+https://jsonplaceholder.typicode.com
 ```
-tests/
-├── api/
-│   └── users.spec.ts
-├── ui/
-│   └── product.spec.ts
 
-pages/
-└── ProductPage.ts
+Реализованы проверки:
 
-fixtures/
-utils/
+✅ Создание ресурса (POST)
+
+✅ Проверка структуры ответа
+
+✅ Проверка типов данных
+
+✅ Негативные сценарии
+
+✅ Эмуляция идемпотентности запросов
+
+✅ Сценарий отсутствия авторизации
+
+---
+
+# 🖥️ UI-тестирование
+
+Реализованы UI-проверки с использованием Playwright.
+
+Покрыты сценарии:
+
+✅ Открытие главной страницы
+
+✅ Проверка URL
+
+✅ Проверка корректной загрузки страницы
+
+✅ Использование Page Object Model
+
+---
+
+# 📁 Структура проекта
+
+```text
+.
+├── pages
+│   └── ProductPage.ts
+│
+├── tests
+│   ├── api
+│   │   └── users.spec.ts
+│   │
+│   └── ui
+│       └── product.spec.ts
+│
+├── playwright.config.ts
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-## Installation
+---
+
+# ⚙️ Установка проекта
+
+Установка зависимостей:
 
 ```bash
 npm install
 ```
 
-## Run API Tests
+Установка браузеров Playwright:
 
 ```bash
-npx playwright test tests/api/users.spec.ts --project=chromium
+npx playwright install
 ```
 
-## Run UI Tests
+---
 
-```bash
-npx playwright test tests/ui/product.spec.ts --project=chromium
-```
+# ▶️ Запуск тестов
 
-## Run All Tests
+### Все тесты
 
 ```bash
 npx playwright test
 ```
 
-## Test Coverage
+### Только API-тесты
 
-### API
+```bash
+npx playwright test tests/api
+```
 
-- Create user
-- Validation scenarios
-- Invalid data handling
-- Idempotency simulation
+### Только UI-тесты
 
-### UI
+```bash
+npx playwright test tests/ui
+```
 
-- Main page opens successfully
-- URL validation
-- Page loading verification
+---
 
-## Design Patterns
+# 🎯 Использованные подходы
 
-- Page Object Model (POM)
-- Reusable page abstraction
-- Playwright fixtures
+* Page Object Model (POM)
+* Разделение UI и API тестов
+* Повторное использование компонентов
+* Работа с асинхронными запросами
+* Базовые проверки контрактов API
+* Демонстрация подходов к тестированию распределённых систем
 
-## Author
+---
 
-Sergey Yur
+# 👨‍💻 Автор
+
+Кириллов С.Ю.
+Telegram: https://t.me/sergeyyur163
+
+Тестовое задание выполнено в рамках отбора на позицию QA Engineer.
